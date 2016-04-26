@@ -1,0 +1,31 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+.container {
+	/*width:1200px;*/
+	margin:0 auto;
+}
+
+#nav {
+	width:15%;
+	float:left;
+}
+#nav ul {
+	list-style: outside none none;	
+}
+.cacha {
+	width: 76%;
+	padding:20px;
+	float:left;
+}
+.header {
+	width:1200px;
+	float:left;
+	padding:10px;
+}
+.footer {
+	width:1200px;
+	float:left;
+}
