@@ -65,41 +65,38 @@
 						  mapTypeId:google.maps.MapTypeId.ROADMAP
 						};
 				
-					map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-				
-				var marker=new google.maps.Marker({
-				  position:myCenter,
-				  });
-				
-				marker.setMap(map);
+					map = new google.maps.Map(document.getElementById("googleMap"),mapProp);			
+					var marker = new google.maps.Marker({
+					  position:myCenter,
+					});
+					marker.setMap(map);
 			  }
 			
 			  function codeAddress() {
-			    var address = document.getElementById("address").value;
-			    geocoder.geocode( { 'address': address}, function(results, status) {
-			      if (status == google.maps.GeocoderStatus.OK) {
-				        var marker = new google.maps.Marker({
-				            map: map,
-				            position: results[0].geometry.location
-				        });
-				        
-				        var locationTot = results[0].geometry.location.toString().split(',');
-				        
-				        myLocationLat = locationTot[0].replace('(', '');
-				        myLocationLong = locationTot[1].replace(')', '');
-				        // alert(myLocationLat + ', ' + myLocationLong);
-				      } else {
-				        alert("Geocode was not successful for the following reason: " + status);
-				      }
-				    });
-			    
-			     	myCenter=new google.maps.LatLng(myLocationLat, myLocationLong);
-					var mapProp = {
-					  center:myCenter,
-					  zoom:12,
-					  mapTypeId:google.maps.MapTypeId.ROADMAP
-					  };
-			    	 map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+				    var address = document.getElementById("address").value;
+				    geocoder.geocode( { 'address': address}, function(results, status) {
+				      if (status == google.maps.GeocoderStatus.OK) {
+					        var marker = new google.maps.Marker({
+					            map: map,
+					            position: results[0].geometry.location
+					        });
+					        
+					        var locationTot = results[0].geometry.location.toString().split(',');
+					        
+					        myLocationLat = locationTot[0].replace('(', '');
+					        myLocationLong = locationTot[1].replace(')', '');
+					      } else {
+					        alert("Geocode was not successful for the following reason: " + status);
+					      }
+					    });
+				    
+				     	myCenter = new google.maps.LatLng(myLocationLat, myLocationLong);
+						var mapProp = {
+						  center:myCenter,
+						  zoom:5,
+						  mapTypeId:google.maps.MapTypeId.ROADMAP
+						  };
+				    	 map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 			  }				
 			google.maps.event.addDomListener(window, 'load', initialize);
 		</script>

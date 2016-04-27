@@ -30,6 +30,8 @@ class Pages extends CI_Controller {
 			if(isset($usuari[0])){
 				$_SESSION['usuari_sl'] = 'AAAAB3NzaC1yc2EAAAABJQAAAQEAhXE7fn4YC18mtBSulxK3BmU1ifK3xW4wRw9E';	
 				$_SESSION['level'] = $usuari[0]->nivel;
+			}else{
+				echo '<style>#incorrect{display: block !important;}</style>';
 			}
 		}
 		if(isset($_SESSION['usuari_sl']))

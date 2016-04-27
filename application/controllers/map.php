@@ -51,14 +51,10 @@ class Map extends CI_Controller {
 
 		/*************************************************************/
 		
-		if($this->input->post('cambio') != "") $this->page_model->cambiar_order($this->input->post('estatid'), $this->input->post('observacio'), $this->input->post('cambio'));
-		
-		$data['map'] = $this->page_model->get_pedidos();
-		
 		$this->load->helper('url');
 		$this->load->view('header');
 		$this->load->view('nav');
-		$this->load->view('map', $data);
+		$this->load->view('map');
 		$this->load->view('footer');
 		}
 	}
